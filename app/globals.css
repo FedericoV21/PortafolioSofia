@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f4efe4;
+  --ink: #0d2b2a;
+  --ink-soft: #1c3d38;
+  --sage: #8f9d82;
+  --sage-soft: #b3bea6;
+  --nav-active: #89966d;
+  --coral: #e4b6a6;
+  --coral-soft: #f0cfc4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-nav-active: var(--nav-active);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background: var(--coral);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.focus-stage {
+  position: relative;
+  overflow: hidden;
+}
+
+.focus-page {
+  position: relative;
+  min-height: 0;
+  background-color: var(--cream);
+}
+
+.focus-page[data-focus] {
+  pointer-events: none;
+}
+
+.focus-flare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+}
+
+.focus-flare-bloom,
+.focus-flare-streak,
+.focus-flare-speck {
+  position: absolute;
+}
+
+.focus-flare-bloom {
+  inset: 18% 22%;
+  background: radial-gradient(
+    ellipse at 50% 42%,
+    rgb(244 239 228 / 0.42),
+    rgb(228 182 166 / 0.16) 36%,
+    transparent 70%
+  );
+}
+
+.focus-flare-streak {
+  top: 46%;
+  left: -8%;
+  width: 116%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(228 182 166 / 0.18) 28%,
+    rgb(244 239 228 / 0.7) 50%,
+    rgb(137 150 109 / 0.22) 72%,
+    transparent 100%
+  );
+  filter: blur(1.2px);
+}
+
+.focus-flare-speck {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgb(244 239 228 / 0.85);
+  box-shadow: 0 0 16px 4px rgb(228 182 166 / 0.45);
+}
+
+.focus-flare-speck-a {
+  top: 38%;
+  left: 27%;
+}
+
+.focus-flare-speck-b {
+  top: 57%;
+  right: 24%;
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 12px 3px rgb(137 150 109 / 0.4);
 }
