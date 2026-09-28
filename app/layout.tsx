@@ -16,6 +16,7 @@ const display = Anton({
 const body = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {

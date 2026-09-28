@@ -24,6 +24,24 @@
   --font-body: var(--font-body);
 }
 
+@custom-variant tablet {
+  @media (width >= 48rem) and (width < 80rem) {
+    @slot;
+  }
+}
+
+@custom-variant tablet-portrait {
+  @media (width >= 48rem) and (width < 80rem) and (orientation: portrait) {
+    @slot;
+  }
+}
+
+@custom-variant tablet-landscape {
+  @media (width >= 48rem) and (width < 80rem) and (orientation: landscape) {
+    @slot;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

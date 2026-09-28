@@ -39,6 +39,13 @@ export const about = {
 export type PhotoProject = {
   slug: string;
   title: string;
+  titleLines: string[];
+  category: string;
+  year: string;
+  lead: string;
+  body: string;
+  place: string;
+  seriesRange: string;
   cover: string;
   images: { src: string; alt: string }[];
 };
@@ -47,6 +54,13 @@ export const photoProjects: PhotoProject[] = [
   {
     slug: "mercado-del-norte",
     title: "Mercado del Norte",
+    titleLines: ["Mercado", "del Norte"],
+    category: "Fotografía documental",
+    year: "2026",
+    lead: "Arquitectura, oficios y señales de un mercado en plena transformación.",
+    body: "Un recorrido por el Mercado del Norte durante su renovación: la geometría moderna del edificio, los trabajos cotidianos y la memoria gráfica que aún permanece en sus pasillos.",
+    place: "Tucumán, Argentina",
+    seriesRange: "01 - 10",
     cover: "/images/fotografia/mercado-cover.jpg",
     images: [
       {
@@ -74,6 +88,13 @@ export const photoProjects: PhotoProject[] = [
   {
     slug: "la-rana-cuadernos",
     title: "La Rana Cuadernos",
+    titleLines: ["La Rana", "Cuadernos"],
+    category: "Fotografía editorial",
+    year: "2026",
+    lead: "Diseño editorial, texturas y ritmo visual para una colección de cuadernos.",
+    body: "La serie explora la relación entre papel, tipografía y composición: planos cercanos, texturas de cubierta, secuencias de apertura y un lenguaje visual que busca equilibrio entre la materialidad del objeto y la claridad editorial.",
+    place: "Tucumán, Argentina",
+    seriesRange: "01 - 06",
     cover: "/images/fotografia/rana-cover.jpg",
     images: [
       {
@@ -105,6 +126,13 @@ export const photoProjects: PhotoProject[] = [
   {
     slug: "espacio-yoga",
     title: "Espacio Yoga",
+    titleLines: ["Espacio", "Yoga"],
+    category: "Fotografía documental",
+    year: "2026",
+    lead: "Un estudio sobre la quietud, la respiración y la geometría del movimiento.",
+    body: "La serie registra el interior del espacio, sus texturas, la luz natural y la pausa entre las prácticas, explorando cómo el ambiente se convierte en un refugio visual para el cuerpo y la atención.",
+    place: "Tucumán, Argentina",
+    seriesRange: "01 - 05",
     cover: "/images/fotografia/yoga-cover.jpg",
     images: [
       {
@@ -132,6 +160,13 @@ export const photoProjects: PhotoProject[] = [
   {
     slug: "teatro",
     title: "Teatro",
+    titleLines: ["Teatro"],
+    category: "Fotografía documental",
+    year: "2026",
+    lead: "Escena, gesto y espacio escénico capturados en un registro visual intenso.",
+    body: "Esta serie explora la tensión entre el movimiento del cuerpo, la arquitectura del teatro y la energía del ensayo. La fotografía busca registrar la intimidad del proceso, la geometría del escenario y la presencia del actor en un espacio de representación.",
+    place: "Tucumán, Argentina",
+    seriesRange: "01 - 05",
     cover: "/images/fotografia/teatro-cover.jpg",
     images: [
       {
