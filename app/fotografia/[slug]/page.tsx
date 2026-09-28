@@ -33,7 +33,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         : "grid";
 
   return (
-    <section className="flex w-full flex-1 flex-col tablet-landscape:min-h-0 tablet-landscape:overflow-hidden xl:mx-auto xl:max-w-7xl xl:min-h-0 xl:overflow-visible xl:px-10 xl:py-14">
+    <section className="flex w-full flex-col max-xl:landscape:min-h-0 max-xl:landscape:flex-1 max-xl:landscape:overflow-hidden xl:mx-auto xl:max-w-7xl xl:px-10 xl:py-14">
       <SeriesView project={project} layout={layout} />
     </section>
   );

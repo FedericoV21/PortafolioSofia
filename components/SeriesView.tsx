@@ -19,8 +19,8 @@ export function SeriesView({
 
   return (
     <>
-      <div className="flex min-h-0 flex-1 flex-col tablet-landscape:flex-row tablet-landscape:overflow-hidden">
-        <div className="px-5 pt-6 pb-4 tablet-portrait:px-[38px] tablet-portrait:pt-12 tablet-portrait:pb-6 tablet-landscape:flex tablet-landscape:w-[360px] tablet-landscape:shrink-0 tablet-landscape:flex-col tablet-landscape:px-6 tablet-landscape:py-6 xl:px-0 xl:pt-0 xl:pb-0">
+      <div className="flex flex-col max-xl:landscape:min-h-0 max-xl:landscape:flex-1 max-xl:landscape:flex-row max-xl:landscape:overflow-hidden">
+        <div className="px-5 pt-6 pb-4 tablet-portrait:px-[38px] tablet-portrait:pt-12 tablet-portrait:pb-6 max-xl:landscape:flex max-xl:landscape:w-[360px] max-xl:landscape:shrink-0 max-xl:landscape:flex-col max-xl:landscape:px-6 max-xl:landscape:py-6 xl:px-0 xl:pt-0 xl:pb-8">
           <div className="flex items-center justify-between gap-4">
             <p className="flex items-center gap-2 text-[10px] tracking-[0.22em] text-ink/55 uppercase tablet:text-[9px] tablet:tracking-[0.16em]">
               <span className="h-1.5 w-1.5 rounded-full bg-coral" />
@@ -30,18 +30,18 @@ export function SeriesView({
               {project.year}
             </p>
           </div>
-          <h1 className="font-display mt-3 text-[clamp(2.6rem,12vw,4.5rem)] leading-[0.88] font-normal tracking-tight text-ink uppercase tablet-portrait:mt-4 tablet-portrait:text-[48px] tablet-portrait:leading-none tablet-landscape:mt-5 tablet-landscape:text-[64px] tablet-landscape:leading-[55px] xl:text-6xl">
+          <h1 className="font-display mt-3 text-[clamp(2.6rem,12vw,4.5rem)] leading-[0.88] font-normal tracking-tight text-ink uppercase tablet-portrait:mt-4 tablet-portrait:text-[48px] tablet-portrait:leading-none max-xl:landscape:mt-5 max-xl:landscape:text-[64px] max-xl:landscape:leading-[55px] xl:text-6xl">
             {project.titleLines.map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
             ))}
           </h1>
-          <div className="mt-4 h-1 w-16 bg-coral tablet:h-1 tablet:w-[62px]" />
-          <p className="mt-5 max-w-xl text-[17px] leading-snug text-ink tablet-portrait:mt-6 tablet-portrait:max-w-none tablet-portrait:text-[18px] tablet-portrait:leading-[24px] tablet-landscape:text-base tablet-landscape:leading-[21px] xl:max-w-xl">
+          <div className="mt-4 h-1 w-16 bg-coral tablet:w-[62px]" />
+          <p className="mt-5 max-w-xl text-[17px] leading-snug text-ink tablet-portrait:mt-6 tablet-portrait:max-w-none tablet-portrait:text-[18px] tablet-portrait:leading-[24px] max-xl:landscape:text-base max-xl:landscape:leading-[21px]">
             {project.lead}
           </p>
-          <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-ink-soft tablet-portrait:text-xs tablet-portrait:leading-[18px] tablet-landscape:text-[11px] tablet-landscape:leading-[16.5px]">
+          <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-ink-soft tablet-portrait:text-xs tablet-portrait:leading-[18px] max-xl:landscape:text-[11px] max-xl:landscape:leading-[16.5px]">
             {project.body}
           </p>
           <dl className="mt-6 flex gap-10">
@@ -65,14 +65,14 @@ export function SeriesView({
           <button
             type="button"
             onClick={() => setOpenIndex(0)}
-            className="mt-6 flex min-h-12 w-full cursor-pointer items-center justify-between bg-coral px-5 text-[12px] tracking-[0.22em] text-ink uppercase tablet:mt-6 tablet:min-h-12 tablet:w-[232px] tablet:text-base tablet:tracking-[0.04em] tablet-landscape:mt-auto"
+            className="mt-6 flex min-h-12 w-full cursor-pointer items-center justify-between bg-coral px-5 text-[12px] tracking-[0.22em] text-ink uppercase tablet:w-[232px] tablet:text-base tablet:tracking-[0.04em] max-xl:landscape:mt-auto xl:w-[232px]"
           >
             Modo inmersivo
             <ExpandIcon />
           </button>
         </div>
 
-        <div className="tablet-landscape:hidden xl:hidden">
+        <div className="max-xl:landscape:hidden xl:hidden">
           {hero ? (
             <button
               type="button"
@@ -113,11 +113,11 @@ export function SeriesView({
           ) : null}
         </div>
 
-        <div className="hidden min-h-0 flex-1 gap-2 py-6 pr-6 tablet-landscape:flex xl:hidden">
+        <div className="hidden min-h-0 flex-1 gap-2 py-6 pr-6 max-xl:landscape:flex">
           {hero ? (
             <button
               type="button"
-              className="relative min-h-0 min-w-0 flex-1 cursor-pointer bg-ink/5"
+              className="relative min-h-0 min-w-0 flex-1 cursor-pointer overflow-hidden bg-ink/5"
               onClick={() => setOpenIndex(0)}
               aria-label={`Abrir ${hero.alt}`}
             >
@@ -137,7 +137,7 @@ export function SeriesView({
                 <button
                   key={image.src}
                   type="button"
-                  className="relative min-h-0 flex-1 cursor-pointer bg-ink/5"
+                  className="relative min-h-0 flex-1 cursor-pointer overflow-hidden bg-ink/5"
                   onClick={() => setOpenIndex(index + 1)}
                   aria-label={`Abrir ${image.alt}`}
                 >
@@ -155,7 +155,7 @@ export function SeriesView({
         </div>
       </div>
 
-      <div className="mt-10 hidden px-6 xl:block xl:px-0">
+      <div className="mt-4 hidden px-6 xl:mt-2 xl:block xl:px-0">
         <PhotoGallery
           images={project.images}
           layout={layout}
