@@ -2,14 +2,21 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Lightbox } from "@/components/Lightbox";
+import { ImmersiveViewer } from "@/components/ImmersiveViewer";
 
 type PhotoGalleryProps = {
   images: { src: string; alt: string }[];
   layout?: "grid" | "yoga" | "mercado";
+  title?: string;
+  category?: string;
 };
 
-export function PhotoGallery({ images, layout = "grid" }: PhotoGalleryProps) {
+export function PhotoGallery({
+  images,
+  layout = "grid",
+  title = "Galería",
+  category,
+}: PhotoGalleryProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const classFor = (index: number) => {
@@ -25,7 +32,7 @@ export function PhotoGallery({ images, layout = "grid" }: PhotoGalleryProps) {
       <ul
         className={
           layout === "grid"
-            ? "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            ? "grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
             : "grid gap-4 sm:grid-cols-2 md:grid-cols-6"
         }
       >
@@ -52,20 +59,12 @@ export function PhotoGallery({ images, layout = "grid" }: PhotoGalleryProps) {
         ))}
       </ul>
       {openIndex !== null ? (
-        <Lightbox
+        <ImmersiveViewer
           images={images}
           index={openIndex}
+          title={title}
+          category={category}
           onClose={() => setOpenIndex(null)}
-          onPrev={() =>
-            setOpenIndex((current) =>
-              current === null ? 0 : (current + images.length - 1) % images.length,
-            )
-          }
-          onNext={() =>
-            setOpenIndex((current) =>
-              current === null ? 0 : (current + 1) % images.length,
-            )
-          }
         />
       ) : null}
     </>
