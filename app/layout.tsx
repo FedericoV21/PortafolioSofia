@@ -4,6 +4,7 @@ import { BrandBar } from "@/components/BrandBar";
 import { Header } from "@/components/Header";
 import { PaperPage } from "@/components/PaperPage";
 import { Providers } from "@/components/Providers";
+import { SiteLoader } from "@/components/SiteLoader";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <BrandBar />
           </PaperPage>
         </Providers>
+        <SiteLoader />
       </body>
     </html>
   );

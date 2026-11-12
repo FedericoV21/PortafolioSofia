@@ -92,6 +92,7 @@ export function Lightbox({ images, index, onClose, onPrev, onNext }: LightboxPro
           fill
           className="object-contain"
           sizes="90vw"
+          quality={90}
           priority
         />
       </div>

@@ -13,7 +13,7 @@ export default function PhotographyPage() {
       <h1 className="font-display shrink-0 text-[clamp(2.6rem,12vw,4.5rem)] leading-none font-normal tracking-tight text-ink uppercase tablet-portrait:text-[78px] tablet-portrait:leading-[75px] tablet-landscape:text-[96px] tablet-landscape:leading-[92px] xl:text-7xl">
         Fotografía
       </h1>
-      <ul className="mt-5 grid grid-cols-2 gap-2.5 tablet-portrait:mt-8 tablet-portrait:gap-5 tablet-landscape:mt-6 tablet-landscape:min-h-0 tablet-landscape:flex-1 tablet-landscape:grid-cols-4 tablet-landscape:gap-7 xl:min-h-0 xl:flex-1 xl:grid-cols-4 xl:gap-7">
+      <ul className="mt-5 grid grid-cols-2 gap-2.5 tablet-portrait:mt-8 tablet-portrait:gap-5 tablet-landscape:mt-6 tablet-landscape:min-h-0 tablet-landscape:flex-1 tablet-landscape:grid-cols-5 tablet-landscape:gap-4 xl:min-h-0 xl:flex-1 xl:grid-cols-5 xl:gap-5">
         {photoProjects.map((project) => (
           <li key={project.slug} className="flex flex-col tablet-landscape:min-h-0 xl:min-h-0">
             <Link
@@ -26,8 +26,8 @@ export default function PhotographyPage() {
                   alt={project.title}
                   fill
                   className="object-cover transition-opacity duration-200 group-hover:opacity-90"
-                  sizes="(max-width: 767px) 50vw, (max-width: 1279px) and (orientation: portrait) 50vw, 25vw"
-                  quality={95}
+                  sizes="(max-width: 767px) 50vw, (max-width: 1279px) and (orientation: portrait) 50vw, 42vw"
+                  quality={85}
                 />
               </div>
               <span className="mt-0 flex min-h-10 shrink-0 items-center justify-center bg-coral px-2 py-2 text-center text-[9px] tracking-[0.16em] text-ink uppercase tablet:min-h-[54px] tablet:text-[12px] tablet:tracking-[0.16em] tablet-landscape:text-[13px] xl:mt-3 xl:min-h-11 xl:bg-coral-soft xl:px-3 xl:text-[11px] xl:tracking-[0.2em] xl:group-hover:bg-coral">
