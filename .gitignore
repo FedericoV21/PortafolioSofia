@@ -43,3 +43,10 @@ next-env.d.ts
 # local extraction leftovers
 /tmp-slides
 /tmp-crop
+/tmp-encoded
+/tmp-video-frames
+/tmp-*.mjs
+
+# masters de video y fotos: quedan en la máquina, no se suben
+/originales
+/public/produccion

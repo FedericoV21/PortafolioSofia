@@ -17,12 +17,12 @@ export default function HomePage() {
       </div>
       <div className="relative min-h-0 w-full flex-1 bg-black tablet-landscape:w-[46.3%] tablet-landscape:flex-none xl:w-[37%] xl:flex-none">
         <Image
-          src="/images/home-hero.jpg"
+          src="/images/home-hero.webp"
           alt="Silla blanca vista a través de un umbral oscuro"
           fill
           className="object-cover object-center"
-          sizes="(max-width: 767px) 100vw, (max-width: 1279px) and (orientation: landscape) 46vw, (max-width: 1279px) 100vw, 37vw"
-          quality={95}
+          sizes="(max-width: 767px) 100vw, (max-width: 1279px) and (orientation: landscape) 46vw, (max-width: 1279px) 100vw, 46vw"
+          quality={90}
           priority
         />
       </div>

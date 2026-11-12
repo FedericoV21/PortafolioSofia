@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ImmersiveViewer } from "@/components/ImmersiveViewer";
 
 type PhotoGalleryProps = {
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; width: number; height: number }[];
   layout?: "grid" | "yoga" | "mercado";
   title?: string;
   category?: string;
@@ -52,7 +52,8 @@ export function PhotoGallery({
                 alt={image.alt}
                 fill
                 className="object-cover transition-opacity duration-200 group-hover:opacity-90"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
               />
             </button>
           </li>

@@ -25,12 +25,12 @@ export default function AboutPage() {
       </div>
       <div className="relative min-h-0 w-full flex-1 overflow-hidden bg-coral/20 tablet-portrait:flex-1 tablet-landscape:w-[38.3%] tablet-landscape:flex-none xl:aspect-auto xl:min-h-0 xl:w-[38%] xl:flex-none">
         <Image
-          src="/images/sofia-portrait.jpg"
+          src="/images/sofia-portrait.webp"
           alt="Retrato de Sofia Albornoz"
           fill
-          className="object-cover object-top"
-          sizes="(max-width: 767px) 100vw, (max-width: 1279px) and (orientation: portrait) 53vw, 38vw"
-          quality={100}
+          className="object-cover object-center"
+          sizes="(max-width: 767px) 100vw, 80vw"
+          quality={90}
           priority
         />
       </div>
