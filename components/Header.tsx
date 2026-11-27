@@ -3,7 +3,7 @@
 import { Link } from "next-transition-router";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -20,18 +20,21 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 shrink-0 bg-cream">
-      <div className={`mx-auto flex w-full items-center justify-between px-6 tablet:h-12 tablet:px-8 xl:h-16 xl:justify-end xl:px-16 ${isPhotoDetail ? "h-16 border-b border-ink/20" : "h-[34px]"}`}>
+    <header className="sticky top-0 z-50 shrink-0 border-b border-ink/20 bg-cream xl:border-b-0">
+      {isPhotoDetail && (
+        <div className="flex h-9 items-center px-6 tablet:hidden">
+          <Link href="/" className="font-display text-xl leading-none tracking-tight text-ink uppercase">{site.name}</Link>
+        </div>
+      )}
+      <div className={`mx-auto flex w-full items-center justify-between px-6 tablet:h-12 tablet:px-8 xl:h-16 xl:px-16 ${pathname === "/" ? "xl:justify-end" : "xl:justify-between"} ${isPhotoDetail ? "h-16" : "h-[34px]"}`}>
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className={`items-center gap-2 xl:hidden ${isPhotoDetail ? "hidden tablet:flex" : "flex"}`}
+          className={`items-center gap-2 ${isPhotoDetail ? "hidden tablet:flex xl:flex" : "flex"} ${pathname === "/" ? "xl:hidden" : "xl:flex"}`}
         >
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-coral font-display text-[12px] leading-none text-cream">
-            S
-          </span>
-          <span className="font-display text-[12px] leading-none tracking-tight text-ink uppercase">
-            Sofía
+          {pathname === "/" && <span className="flex h-6 w-6 items-center justify-center rounded-full bg-coral font-display text-[12px] leading-none text-cream">S</span>}
+          <span className={`font-display leading-none tracking-tight text-ink uppercase ${pathname === "/" ? "text-[12px]" : "text-xl"}`}>
+            {pathname === "/" ? "Sofía" : site.name}
           </span>
         </Link>
         <nav
