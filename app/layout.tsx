@@ -21,11 +21,24 @@ const body = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portafolio-sofia-gamma.vercel.app"),
   title: {
     default: `${site.name} — ${site.role}`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    siteName: site.name,
+    title: `${site.name} — ${site.role}`,
+    description: site.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description: site.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
