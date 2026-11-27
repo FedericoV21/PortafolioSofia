@@ -23,10 +23,10 @@ export const contact = {
 
 export const about = {
   paragraphs: [
-    "Soy Sofi, estudiante avanzada de la Tecnicatura Universitaria en Fotografía de la UNT.",
-    "Desde siempre me interesó la fotografía y decidí formarme profesionalmente para poder desarrollar mi carrera en este ámbito.",
-    "Actualmente trabajo en una agencia de publicidad, donde me desempeño en redacción de notas, producción y edición audiovisual.",
-    "También participo de voluntariado en los equipos de comunicación de espacios como la Bienal Argentina de Fotografía Documental y Periferia Fotoclub.",
+    "Soy Sofía Albornoz, estudiante avanzada de la Tecnicatura Universitaria en Fotografía de la Universidad Nacional de Tucumán.",
+    "Desde hace algunos años exploro la fotografía desde sus dimensiones técnicas y artísticas, encontrando en la imagen una forma de observar, interpretar y narrar el mundo que me rodea.",
+    "Actualmente trabajo en un medio de comunicación digital, donde desarrollo tareas vinculadas a la redacción de notas, producción de contenidos y realización audiovisual. Este recorrido me permitió ampliar mi interés por la comunicación y explorar diferentes formas de contar historias, construir relatos y transmitir ideas a través de distintos lenguajes.",
+    "Me interesa especialmente el cruce entre la fotografía, lo audiovisual y la comunicación digital, áreas en las que busco seguir desarrollándome y aportando una mirada creativa, narrativa y visual.",
   ],
   tools: [
     { name: "Photoshop", src: "/images/icons/photoshop.png" },
