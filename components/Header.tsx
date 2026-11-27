@@ -13,6 +13,7 @@ function isActive(pathname: string, href: string) {
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isPhotoDetail = pathname.startsWith("/fotografia/");
 
   useEffect(() => {
     setOpen(false);
@@ -20,11 +21,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 shrink-0 bg-cream">
-      <div className="mx-auto flex h-[34px] w-full items-center justify-between px-6 tablet:h-12 tablet:px-8 xl:h-16 xl:justify-end xl:px-16">
+      <div className={`mx-auto flex w-full items-center justify-between px-6 tablet:h-12 tablet:px-8 xl:h-16 xl:justify-end xl:px-16 ${isPhotoDetail ? "h-16 border-b border-ink/20" : "h-[34px]"}`}>
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="flex items-center gap-2 xl:hidden"
+          className={`items-center gap-2 xl:hidden ${isPhotoDetail ? "hidden tablet:flex" : "flex"}`}
         >
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-coral font-display text-[12px] leading-none text-cream">
             S
@@ -34,14 +35,14 @@ export function Header() {
           </span>
         </Link>
         <nav
-          className="hidden w-[min(40rem,58%)] items-center justify-between xl:flex"
+          className={`items-center justify-between xl:flex xl:w-[min(40rem,58%)] ${isPhotoDetail ? "flex w-full tablet:hidden" : "hidden"}`}
           aria-label="Principal"
         >
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`font-display text-xs font-normal tracking-[0.16em] uppercase transition-colors duration-200 ${
+              className={`font-display text-[11px] font-normal tracking-[0.09em] uppercase transition-colors duration-200 xl:text-xs xl:tracking-[0.16em] ${
                 isActive(pathname, item.href)
                   ? "text-nav-active"
                   : "text-ink hover:text-nav-active"
@@ -53,7 +54,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="inline-flex h-11 w-11 translate-x-2 cursor-pointer items-center justify-center text-ink xl:hidden"
+          className={`h-11 w-11 translate-x-2 cursor-pointer items-center justify-center text-ink xl:hidden ${isPhotoDetail ? "hidden tablet:inline-flex" : "inline-flex"}`}
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
